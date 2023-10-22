@@ -3,7 +3,72 @@
     max-height: 10vh;
 }
 
-#Pokemon_example{
-    max-width: 70vh;
-    max-height: 70vh;
+*{
+    font-family: 'Belanosima', sans-serif;
 }
+
+#Pokemon_example{
+    max-width: 30vmin;
+    max-height: 40vmin;
+}
+
+.carousel-inner{
+    text-align: center;
+    padding: 2vh;
+}
+
+.card-title{
+    font-weight: 600;
+}
+
+.badge{
+    font-weight: 200;
+}
+
+.weight_height_values{
+    font-weight: 600;
+    font-size: xx-large;
+    opacity: 0.6;
+}
+
+.weight_height{
+    font-weight: 600;
+    font-size: large;
+    opacity: 0.9;
+}
+
+/* STYLE THE SEPARATION BETWEEN POKEMON TYPES*/
+.me-custom {
+    margin-right: 2vw;
+}
+
+.image-button{
+    width: 80%;
+    height: 80%;
+}
+
+.button-pokemon{
+    margin: 1%;
+    background-color: purple;
+    border-color: transparent;
+    width: 30vw;
+    height: 30vw;
+    position: relative;
+
+}
+
+.button-pokemon:hover{
+    background-color: purple;
+    border-color: transparent;
+    filter: brightness(50%);
+    
+}
+
+.Pokemon-name{
+    position: absolute;
+    bottom: 0;
+
+}
+
+
+
