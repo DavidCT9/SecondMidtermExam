@@ -42,15 +42,32 @@
 
   <div id="carouselExampleDark" class="carousel carousel-dark slide">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <% if (typeof pokemon !=="undefined" ) { %>
+        <% for(let i=0; i < 4; i++) { %>
+          <% if (i===0) { %>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<%= i  %>" class="active"
+              aria-current="true" aria-label="<%= `Slide ${i}` %>"></button>
+            <% } else { %>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<%= i  %>"
+                aria-label="<%= `Slide ${i}` %>"></button>
+              <% } %>
+                <% } %>
+                  <% } else { %>
+                    <% for(let i=0; i < 3; i++) { %>
+                      <% if (i===0) { %>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<%= i  %>"
+                          class="active" aria-current="true" aria-label="<%= `Slide ${i}` %>"></button>
+                        <% } else { %>
+                          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<%= i  %>"
+                            aria-label="<%= `Slide ${i}` %>"></button>
+                          <% } %>
+                            <% } %>
+                              <% } %>
     </div>
     <div class="carousel-inner ">
       <% if (typeof pokemon !=="undefined" ) { %>
         <!-------------- C A R D ---------------------------------->
-        <div class="carousel-item active" data-bs-interval="10000">
+        <div class="carousel-item active">
           <div class="card d-block w-100">
             <img class="card-img-top img-fluid" src="<%= pokemon.sprites.front_default %>" alt="Pokemon_example"
               id="Pokemon_example">
@@ -170,9 +187,9 @@
           <% for(let i=0; i < 3; i++) { %>
             <!-------------- C A R D ---------------------------------->
             <% if (typeof pokemon==="undefined" && i===0) { %>
-              <div class="carousel-item active" data-bs-interval="2000">
+              <div class="carousel-item active">
                 <% } else { %>
-                  <div class="carousel-item" data-bs-interval="2000">
+                  <div class="carousel-item">
                     <% } %>
                       <div class="card d-block w-100">
                         <img class="card-img-top img-fluid" src="<%= random_pokemons[i].sprites.front_default %>"

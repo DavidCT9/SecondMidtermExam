@@ -22,6 +22,8 @@ server.get('/', async (req, res) => {
     }
 
     try {
+        if (pokemon === "") throw ("Empty");
+
         const pokemon_fetch = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
         const pokemon_json = await pokemon_fetch.json();
         res.render('index', {
