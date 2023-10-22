@@ -21,18 +21,18 @@ server.get('/', async (req, res) => {
         other_pokemons.push(curr_json);
     }
 
-    if (pokemon !== undefined) {
+    try {
         const pokemon_fetch = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
         const pokemon_json = await pokemon_fetch.json();
         res.render('index', {
             pokemon: pokemon_json,
             random_pokemons: other_pokemons,
         });
+    } catch (e) {
+        res.render('index', {
+            random_pokemons: other_pokemons,
+        });
     }
-    res.render('index', {
-        random_pokemons: other_pokemons,
-    });
-
 })
 
 server.listen(port, () => {
